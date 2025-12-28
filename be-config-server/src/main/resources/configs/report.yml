@@ -9,11 +9,12 @@ server:
   port: 8091
 
 spring:
-  datasource:
-    url: jdbc:h2:mem:test-db
-    username: sa
-    password:
-    driverClassName: org.h2.Driver
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    database: h2
+    hibernate:
+      ddl-auto: update
+    show-sql: true  # uncomment to enable SQL logging
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/db_log?useTimeZone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false
+    username: kmds
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
